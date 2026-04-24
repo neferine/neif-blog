@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neferine - Blog</title>
+    <description>Developer based in the Philippines building web, mobile, and desktop applications with a deep love for the backend.</description>
+    <link>https://neferine.dev</link>
+    <atom:link href="https://neferine.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Apr 2025 00:00:00 GMT</lastBuildDate>
+    
+    <item>
+      <title>Why I build everything in Rust</title>
+      <description>
+        &lt;p&gt;
+        Performance, safety, and the satisfaction of a compiler that catches your mistakes 
+        before users ever see them. These are the reasons I've gravitated toward Rust for 
+        nearly everything I build.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Compiler is Your Best Friend&lt;/h2&gt;
+        &lt;p&gt;
+        In most languages, you discover bugs at runtime—often in production. With Rust, 
+        the compiler catches entire classes of bugs before your code even runs. Null pointer 
+        exceptions? Gone. Data races? Eliminated. Memory leaks? Practically impossible.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        This isn't just about safety—it's about confidence. When the compiler says your 
+        code is correct, you can deploy with certainty. That peace of mind is invaluable 
+        when you're building systems that need to be reliable.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;Performance Without Sacrifice&lt;/h2&gt;
+        &lt;p&gt;
+        Rust gives you C-level performance without the memory management nightmare. 
+        Zero-cost abstractions mean you get high-level constructs that compile down to 
+        efficient machine code. No garbage collector pauses, no runtime overhead—just 
+        fast, predictable execution.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        For web backends, this means handling more requests with fewer resources. 
+        For WebAssembly, it means smaller binaries and faster load times. For CLI tools, 
+        it means instant startup and responsive user experience.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Ecosystem is Thriving&lt;/h2&gt;
+        &lt;p&gt;
+        When I first started with Rust, the ecosystem was nascent. Today, it's robust 
+        and growing rapidly. From web frameworks like Axum and Actix to embedded systems 
+        with embedded-hal, there's a crate for practically everything you need.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        The community is thoughtful and pragmatic. Documentation is excellent. Tooling 
+        like Cargo makes dependency management a breeze. It's a mature ecosystem that 
+        respects your time and intelligence.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;It's Just Better Engineering&lt;/h2&gt;
+        &lt;p&gt;
+        At the end of the day, Rust encourages better software design. The borrow checker 
+        forces you to think about data ownership and lifetimes. The type system pushes 
+        you toward more explicit, clearer code. Error handling with Result and Option 
+        makes impossible states unrepresentable.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        These aren't limitations—they're guardrails that lead to more maintainable, 
+        more reliable software. And that's what engineering is all about: building 
+        things that work correctly and continue to work over time.
+        &lt;/p&gt;
+      </description>
+      <link>https://neferine.dev/blog/why-rust.html</link>
+      <guid>https://neferine.dev/blog/why-rust.html</guid>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+      <category>Rust</category>
+    </item>
+    
+    <item>
+      <title>WebAssembly is not a JavaScript replacement</title>
+      <description>
+        &lt;p&gt;
+        A nuanced look at what WASM actually is, where it shines,
+        and why the two work better together than apart.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Misconception&lt;/h2&gt;
+        &lt;p&gt;
+        Every few months, I see another article declaring "WebAssembly will replace JavaScript." 
+        It's an appealing narrative—compiled code running in the browser at near-native speeds. 
+        But this misses the fundamental point of WebAssembly.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        WebAssembly was never designed to replace JavaScript. It was designed to complement it. 
+        Think of it less as a replacement and more as a specialized tool that extends what's 
+        possible in the browser.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;What WebAssembly Actually Is&lt;/h2&gt;
+        &lt;p&gt;
+        WebAssembly is a compilation target. It's a binary instruction format that runs alongside 
+        JavaScript in the browser, not instead of it. The key insight is that WASM and JavaScript 
+        can call each other seamlessly.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        JavaScript handles the DOM, user interactions, and application logic. WebAssembly handles 
+        the heavy lifting—computationally intensive tasks, performance-critical algorithms, and 
+        codebases written in languages like Rust, C++, or Go.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;Where WASM Shines&lt;/h2&gt;
+        &lt;p&gt;
+        The sweet spot for WebAssembly isn't replacing everyday JavaScript. It's in scenarios where 
+        JavaScript's performance limitations become apparent:
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Image and video processing:&lt;/strong&gt; Manipulating pixels at scale, applying filters, 
+        encoding/decoding media files. These operations are orders of magnitude faster in WASM.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Scientific computing:&lt;/strong&gt; Complex mathematical operations, data analysis, 
+        simulations. Think running Python's NumPy or R's statistical functions directly in the browser.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Game engines:&lt;/strong&gt; Physics calculations, rendering pipelines, AI behavior. 
+        Games like Figma's design tool or AutoCAD's web version demonstrate this perfectly.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Cryptography and security:&lt;/strong&gt; Hashing, encryption, blockchain operations. 
+        These benefit from WASM's predictable performance and memory safety.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The JavaScript Partnership&lt;/h2&gt;
+        &lt;p&gt;
+        The most successful WASM applications don't eliminate JavaScript—they integrate with it. 
+        JavaScript sets up the UI, handles user events, manages application state. WASM modules 
+        are imported and called like any other JavaScript function.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        This partnership is powerful. JavaScript's flexibility and ecosystem combined with WASM's 
+        performance creates possibilities that neither technology could achieve alone.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Developer Experience&lt;/h2&gt;
+        &lt;p&gt;
+        From a developer perspective, WebAssembly opens up the entire ecosystem of compiled languages 
+        to web development. Want to use Rust's memory safety? C++'s performance? Go's concurrency? 
+        Now you can, without leaving the browser.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        Tools like wasm-bindgen make this integration seamless. You write Rust code, compile it to 
+        WASM, and generate JavaScript bindings automatically. The result feels natural—like calling 
+        any other JavaScript function.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Future is Cooperative&lt;/h2&gt;
+        &lt;p&gt;
+        Rather than replacing JavaScript, WebAssembly is expanding what's possible on the web. 
+        The future isn't WASM &lt;em&gt;or&lt;/em&gt; JavaScript—it's WASM &lt;em&gt;and&lt;/em&gt; JavaScript.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        As browsers add more WebAssembly features (direct DOM access, threading, garbage collection), 
+        the line between the two will blur further. But the fundamental relationship will remain: 
+        JavaScript as the orchestrator, WebAssembly as the specialist.
+        &lt;/p&gt;
+        
+        <p>
+        That's not a replacement story. That's a collaboration story—and it's far more exciting.
+        </p>
+      </description>
+      <link>https://neferine.dev/blog/wasm-not-js-replacement.html</link>
+      <guid>https://neferine.dev/blog/wasm-not-js-replacement.html</guid>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 GMT</pubDate>
+      <category>WebAssembly</category>
+    </item>
+    
+    <item>
+      <title>Building a text editor from scratch</title>
+      <description>
+        &lt;p&gt;
+        Notes on gap buffers, rope data structures, and the surprising
+        complexity of something that looks simple.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;It Starts Simple&lt;/h2&gt;
+        &lt;p&gt;
+        A text editor seems straightforward: display text, let users type, save the result. 
+        How hard could it be? The answer, as I discovered, is "surprisingly complex."
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        The naive approach is just storing text in a string. Insert at cursor position, 
+        delete from cursor position. This works for tiny files, but with a 100MB document, 
+        every insertion becomes an O(n) operation. The editor freezes.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Gap Buffer Solution&lt;/h2&gt;
+        &lt;p&gt;
+        The first optimization most editors discover is the gap buffer. Instead of one string, 
+        you maintain a buffer with a gap at the cursor position. Insertions and deletions 
+        become O(1) operations—just move the gap boundaries.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        But the gap buffer has its own problems. Large cursor jumps mean moving huge amounts 
+        of data to relocate the gap. Multiple cursors? Multiple gaps? The simple solution 
+        gets complicated quickly.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;Enter the Rope&lt;/h2&gt;
+        &lt;p&gt;
+        This is where rope data structures come in. A rope is essentially a binary tree 
+        where each leaf contains a chunk of text. Instead of moving text around, you're 
+        just rearranging pointers.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        Insertions become tree insertions. Deletions become tree deletions. The text itself 
+        never moves—only the structure changes. For large files, this is transformative.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        But ropes bring their own complexity. Tree rebalancing, memory management, 
+        maintaining line numbers for display. Each optimization reveals new challenges.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;Beyond the Data Structure&lt;/h2&gt;
+        &lt;p&gt;
+        Once you solve the core data structure problem, you discover the real complexity 
+        is in everything else:
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Syntax highlighting:&lt;/strong&gt; Not just coloring keywords, but handling nested 
+        languages, performance optimizations, and incremental parsing.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Undo/redo:&lt;/strong&gt; Seems simple until you need to handle complex operations, 
+        memory usage, and collaborative editing.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;File handling:&lt;/strong&gt; Large files, encoding detection, atomic saves, 
+        file watching. Each edge case matters.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        &lt;strong&gt;Performance:&lt;/strong&gt; Virtual scrolling for huge files, background parsing, 
+        responsive UI during heavy operations.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The Rendering Challenge&lt;/h2&gt;
+        &lt;p&gt;
+        Displaying text efficiently is its own discipline. You can't just render the entire 
+        file—you need viewports, line wrapping calculations, font metrics, and smooth scrolling.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        Modern editors use techniques like texture atlases for glyphs, GPU acceleration for 
+        rendering, and sophisticated caching strategies. The display layer can be as complex 
+        as the data structure layer.
+        &lt;/p&gt;
+        
+        &lt;h2&gt;The WebAssembly Advantage&lt;/h2&gt;
+        &lt;p&gt;
+        This is where WebAssembly changes the game. Building a performant text editor 
+        in JavaScript hits limitations quickly. Garbage collection pauses, memory overhead, 
+        and single-threaded performance become bottlenecks.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        With WASM, you get predictable performance, manual memory management, and 
+        multithreading capabilities. A rope implementation in Rust can be significantly 
+        faster and more memory-efficient than its JavaScript counterpart.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        It's a deceptively simple problem that reveals layers of complexity. Each 
+        solution opens new challenges. Each optimization reveals new edge cases.
+        &lt;/p&gt;
+        
+        &lt;p&gt;
+        But that's what makes it fascinating. The text editor is a microcosm of 
+        software engineering—simple on the surface, endlessly complex underneath.
+        &lt;/p&gt;
+      </description>
+      <link>https://neferine.dev/blog/text-editor-from-scratch.html</link>
+      <guid>https://neferine.dev/blog/text-editor-from-scratch.html</guid>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 GMT</pubDate>
+      <category>Development</category>
+    </item>
+  </channel>
+</rss>

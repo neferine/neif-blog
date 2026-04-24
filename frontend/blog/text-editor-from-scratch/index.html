@@ -1,0 +1,135 @@
+<section class="section blog-post-section" id="blog-text-editor-from-scratch" data-title="Neferine — Building a text editor from scratch">
+  <nav class="blog-topbar">
+    <a href="/" class="blog-topbar-brand">Neferine</a>
+    <a href="/blog" class="blog-topbar-back">← Blog</a>
+    <button class="blog-topbar-toggle theme-toggle" aria-label="Toggle theme">Dark</button>
+  </nav>
+
+  <main class="blog-post">
+    <div class="blog-header">
+      <h1 class="blog-title">Building a text editor from scratch</h1>
+      <div class="blog-meta">
+        <time datetime="2025-02-18">February 18, 2025</time> • 
+        <span class="blog-tag">Dev</span>
+      </div>
+    </div>
+
+    <article class="blog-content">
+      <p>
+        Building a text editor seems simple at first. How hard can it be?
+        It's just displaying text and letting users type, right? Then you
+        actually start building one and realize it's one of the most
+        complex problems in computer science.
+      </p>
+
+      <h2>The Naive Approach</h2>
+      
+      <p>
+        My first attempt was simple: store text in a string, render it to
+        the screen, handle keyboard input. Easy. Until I tried to handle
+        deletion. Then I had to manage cursor position. Then text selection.
+        Then undo/redo.
+      </p>
+
+      <p>
+        Each "simple" feature revealed layers of complexity. The more I
+        added, the more I realized I was fighting against fundamental
+        limitations of my data structure.
+      </p>
+
+      <h2>The Data Structure Problem</h2>
+      
+      <p>
+        The core issue is how you represent the text. A simple string is
+        terrible for editing. Every insertion or deletion requires shifting
+        everything after the cursor. O(n) operations for every keystroke.
+      </p>
+
+      <p>
+        That's when I discovered gap buffers. Instead of storing text as a
+        continuous string, you store it with a "gap" at the cursor position.
+        Insertions fill the gap, deletions expand it. Most operations become
+        O(1).
+      </p>
+
+      <h2>Gap Buffers in Practice</h2>
+      
+      <p>
+        Implementing a gap buffer was eye-opening. Suddenly, typing felt
+        instantaneous. Large files didn't slow down. The editor felt
+        professional.
+      </p>
+
+      <p>
+        But gap buffers have their own challenges. Complex cursor movement,
+        text selection across the gap boundary, handling multiple files.
+        Each problem required careful thought and elegant solutions.
+      </p>
+
+      <h2>Beyond Gap Buffers</h2>
+      
+      <p>
+        For really large files, even gap buffers struggle. That's when you
+        learn about rope data structures. Instead of one buffer, you use a
+        balanced binary tree of text chunks. Each operation becomes
+        O(log n) instead of O(n).
+      </p>
+
+      <p>
+        The complexity increases exponentially. Now you're managing tree
+        rebalancing, memory allocation, cache efficiency. But the editor
+        can handle gigabyte-sized files without breaking a sweat.
+      </p>
+
+      <h2>The User Experience Layer</h2>
+      
+      <p>
+        Data structures are only half the battle. The other half is user
+        experience. Syntax highlighting, auto-completion, search and replace,
+        multiple cursors, split views.
+      </p>
+
+      <p>
+        Each feature requires its own algorithms and optimizations.
+        Syntax highlighting needs incremental parsing. Auto-completion needs
+        fuzzy matching. Search needs efficient indexing.
+      </p>
+
+      <h2>The Learning Journey</h2>
+      
+      <p>
+        Building a text editor taught me more about computer science than
+        any textbook. Data structures, algorithms, user interface design,
+        performance optimization—all in one project.
+      </p>
+
+      <p>
+        But most importantly, it taught me that simple problems often have
+        incredibly complex solutions. And that's what makes programming
+        beautiful.
+      </p>
+
+      <h2>Conclusion</h2>
+      
+      <p>
+        A text editor is deceptively complex. It looks simple on the
+        surface, but underneath lies layers of sophisticated algorithms
+        and careful optimizations.
+      </p>
+
+      <p>
+        It's a deceptively simple problem that reveals layers of complexity.
+        Each solution opens new challenges. Each optimization reveals new
+        edge cases.
+      </p>
+
+      <p>
+        But that's what makes it fascinating. The text editor is a
+        microcosm of software engineering—simple on the surface, endlessly
+        complex underneath.
+      </p>
+    </article>
+
+    <a href="/blog" class="back-link">← Back to Blog</a>
+  </main>
+</section>
